@@ -24,12 +24,19 @@
 			</ul>
 		</nav>
 	</div>
-	
 
-	<div><h1> Welcome to <br>IBITS Official Website!</h1></div>
-	<p class = "paragraph"> Label label label label label <br> 
-				label label label label label label</p>
-
+	<div class= "row">
+		<div class="col-2">
+			<h1> Welcome to the official site of <br>
+				IBITS!</h1>
+			<p>Label label label label label <br>
+				label label label label</p>
+			<p>Become one of IBITS Fam! <a href="register.php">Click Here!</a>
+		</div>
+		<div class="col-2">
+			<img src= "images/template.png">
+		</div>
+	</div>
 
 </body>
 </html>
