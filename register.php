@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel= "icon" href="images/icon.png" type="image/x-icon">
+	<link rel= "icon" href="images/page-icon.ico" type="image/x-icon">
 	<title>IBITS | Homepage</title>
-	<link rel= "stylesheet" href= "registerstyle.css">
+	<link rel= "stylesheet" href= "style-register.css">
 	<link rel= "stylesheet" href= "https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 	<link rel= "stylesheet" href= "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -45,6 +45,10 @@
 		<div class = "input-group">
 			<label>Middle Name</label>
 			<input type= "text" name= "middlename">
+		</div>
+		<div class = "input-group">
+			<label>Section</label>
+			<input type= "text" name= "section">
 		</div>
 		<div class = "input-group">
 			<label>Year Level</label>
@@ -107,7 +111,7 @@
 			$_POST['lastname']=="" && 
 			$_POST['firstname']=="" && 
 			$_POST['middlename']=="" && 
-			$_POST['address']=="" && 
+			$_POST['section']=="" && 
 			$_POST['year']=="" && 
 			$_POST['email']== "" && 
 			$_POST['contactnumber']== "" && 
@@ -119,8 +123,8 @@
 		echo "Fill all the field first<br>";
 		}
 		else {
-		$sql = "INSERT INTO `tbl_accounts`(`account_StudentNumber`, `account_LastName`, `account_FirstName`, `account_MiddleName`, `account_Year`, `account_Email`, `account_ContactNumber`, `account_Address`, `account_Birthday`, `account_Age`, `account_Password`) 
-			VALUES ('$_POST[studentnumber]','$_POST[lastname]','$_POST[firstname]','$_POST[middlename]','$_POST[year]','$_POST[email]','$_POST[contactnumber]' ,'$_POST[address]','$_POST[birthday]' ,'$_POST[age]' ,'$_POST[password1]')";
+		$sql = "INSERT INTO `tbl_accounts`(`account_StudentNumber`, `account_LastName`, `account_FirstName`, `account_MiddleName`, `account_Section`, `account_Year`, `account_Email`, `account_ContactNumber`, `account_Address`, `account_Birthday`, `account_Age`, `account_Password`) 
+			VALUES ('$_POST[studentnumber]','$_POST[lastname]','$_POST[firstname]','$_POST[middlename]','$_POST[section]','$_POST[year]','$_POST[email]','$_POST[contactnumber]' ,'$_POST[address]','$_POST[birthday]' ,'$_POST[age]' ,'$_POST[password1]')";
 		$result = mysqli_query($conn,$sql);
 		echo"<br>Your data has been recorded successfully!";
 		}
