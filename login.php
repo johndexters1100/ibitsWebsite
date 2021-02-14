@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel= "icon" href="images/icon.png" type="image/x-icon">
+	<link rel= "icon" href="images/page-icon.ico" type="image/x-icon">
 	<title>IBITS | Homepage</title>
-	<link rel= "stylesheet" href= "loginstyle.css">
+	<link rel= "stylesheet" href= "style-login.css">
 	<link rel= "stylesheet" href= "https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 	<link rel= "stylesheet" href= "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -29,18 +29,20 @@
 		<h2>Login</h2>
 	</div>
 	
-	<form method= "post">
+	<form action="loginphp.php" method= "post">
+		<?php if (isset($_GET['error'])) { ?>
+     		<p class="error"><?php echo $_GET['error']; ?></p>
+     	<?php } ?>
 		<div class = "input-group">
 			<label>Email</label>
-			<input type= "text" name= "email">
+			<input type= "text" name= "email" placeholder="Email">
 		</div>
-
 		<div class = "input-group">
 			<label>Password</label>
-			<input type= "password" name= "password1">
+			<input type= "password" name= "password1" placeholder="Password">
 		</div>
 		<div class = "input-group">
-			<button type="submit" name="login" class="btn">Login</button>
+			<button type="submit" class="btn">Login</button>
 		</div>
 		<p>Don't have an account yet? <a href="register.php">Register Now</a></p>
 

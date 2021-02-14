@@ -29,107 +29,99 @@
 		<h2>Register</h2>
 	</div>
 	
-	<form method= "post">
+	<form action="signup-check.php" method= "post">
 		<div class = "input-group">
 			<label>Student Number</label>
-			<input type= "text" name= "studentnumber">
+			<?php 
+			if (isset($_GET['studentnumber'])) { ?>
+			<input type= "text" 
+				name= "studentnumber" 
+				placeholder="Student Number" 
+				value="<?php echo $_GET['studentnumber']; ?>"
+				required >
+			 <?php }
+			 else{ ?>
+              <input type="text" 
+                      name="studentnumber" 
+                      placeholder="Student Number" required>
+          <?php }	?>
 		</div>
 		<div class = "input-group">
 			<label>Last Name</label>
-			<input type= "text" name= "lastname">	
+			<?php 
+			if (isset($_GET['lastname'])) { ?>
+			<input type= "text" 
+			name= "lastname" 
+			required 
+			placeholder="Last Name"
+			value="<?php echo $_GET['lastname']; ?>">
+			<?php }
+			 else{ ?>
+              <input type="text" 
+                      name="lastname" 
+                      placeholder="Last Name" required>
+          <?php }	?>
 		</div>
 		<div class = "input-group">
 			<label>First Name</label>
-			<input type= "text" name= "firstname">
+			<input type= "text" name= "firstname" placeholder="First Name" required>
 		</div>
 		<div class = "input-group">
 			<label>Middle Name</label>
-			<input type= "text" name= "middlename">
+			<input type= "text" name= "middlename" placeholder="Middle Name" required>
 		</div>
 		<div class = "input-group">
 			<label>Section</label>
-			<input type= "text" name= "section">
+			<input type= "text" name= "section" placeholder="Section" required>
 		</div>
 		<div class = "input-group">
 			<label>Year Level</label>
-			<input type= "text" name= "year">
+			<input type= "text" name= "year" placeholder="Year Level" required>
 		</div>
 		<div class = "input-group">
 			<label>Email</label>
-			<input type= "email" name= "email">
+			<input type= "email" name= "email" placeholder="Email" required>
 		</div>
 		<div class = "input-group">
-			<label>Contact Number</label>
-			<input type= "text" name= "contactnumber">
+			<label>Contact Number</label >
+			<input type= "text" name= "contactnumber" placeholder="Contact Number" required>
 		</div>
 		<div class = "input-group">
 			<label>Address</label>
-			<input type= "text" name= "address">
+			<input type= "text" name= "address" placeholder="Address" required>
 		</div>
 		<div class = "input-group">
 			<label>Birthday</label>
-			<input type= "date" name= "birthday">
+			<input type= "date" name= "birthday" required> 
 		</div>
 		<div class = "input-group">
 			<label>Age</label>
-			<input type= "text" name= "age">
+			<input type= "text" name= "age" placeholder="Age" required>
 		</div>
 		<div class = "input-group">
 			<label>Password</label>
-			<input type= "password" name= "password1">
+			<input type= "password" name= "password1" placeholder="Password" required>
 		</div>
 		<div class = "input-group">
 			<label>Confirm Password</label>
-			<input type= "password" name= "password2">
+			<input type= "password" name= "password2" placeholder="Confirm Password" required>
 		</div>
+
+		<?php if (isset($_GET['error'])) { ?>
+     		<p class="error"><?php echo $_GET['error']; ?></p>
+     		<?php } ?>
+
+          <?php if (isset($_GET['success'])) { ?>
+               <p class="success"><?php echo $_GET['success']; ?></p>
+          <?php } ?>
+
 		<div class = "input-group">
-			<button type="submit" name="register" class="btn">Register</button>
+			<button type="submit" class="btn">Register</button>
 		</div>
 		<p>Already have an account? <a href="login.php">Login Now</a></p>
 	</form>
 
-	<?php
-		$DBHost = "localhost:3308";
-		$DBUser = "root";
-		$DBPass = "";
-		$DBName = "db_ibits";
-		
-		$conn = mysqli_connect($DBHost, $DBUser, $DBPass, $DBName);
-
-		if(!$conn){
-		die("Connection failed: " . mysqli_error());
-		}
-
-		//REGISTER BUTTON
-		if(isset($_POST['register'])!=''){
-		$errZip = "";
-		if($_POST['password1']!== $_POST['password2']){
-		$errZip = "";
-		echo "Password must be the same<br>";
-		}
-		if($_POST['studentnumber']=="" && 
-			$_POST['lastname']=="" && 
-			$_POST['firstname']=="" && 
-			$_POST['middlename']=="" && 
-			$_POST['section']=="" && 
-			$_POST['year']=="" && 
-			$_POST['email']== "" && 
-			$_POST['contactnumber']== "" && 
-			$_POST['address']== "" && 
-			$_POST['birthday']== "" && 
-			$_POST['age']== "" && 
-			$_POST['password1']== ""){
-		$errZip = "";
-		echo "Fill all the field first<br>";
-		}
-		else {
-		$sql = "INSERT INTO `tbl_accounts`(`account_StudentNumber`, `account_LastName`, `account_FirstName`, `account_MiddleName`, `account_Section`, `account_Year`, `account_Email`, `account_ContactNumber`, `account_Address`, `account_Birthday`, `account_Age`, `account_Password`) 
-			VALUES ('$_POST[studentnumber]','$_POST[lastname]','$_POST[firstname]','$_POST[middlename]','$_POST[section]','$_POST[year]','$_POST[email]','$_POST[contactnumber]' ,'$_POST[address]','$_POST[birthday]' ,'$_POST[age]' ,'$_POST[password1]')";
-		$result = mysqli_query($conn,$sql);
-		echo"<br>Your data has been recorded successfully!";
-		}
-		}
-	?>
+	
 
 </body>
 </html>
