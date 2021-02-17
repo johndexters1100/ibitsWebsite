@@ -1,0 +1,100 @@
+*{
+	box-sizing: border-box;
+}
+body{	
+	background: #FEB800;
+	font-family: Tokyo;
+	margin: 0;
+	padding: 0;
+}
+
+/* Body Text */
+
+p{
+	color: #555;
+}
+
+/* Dropdown Menu */
+.dropdown{
+	margin: 0 auto;
+	background: #212121;
+	position: relative;
+}
+nav{
+	height: 60px;
+	background: #212121;
+	box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+.logo{
+	padding: 0px; 0 0 80px;
+	width: 400px;
+	height: 60px;
+}
+nav ul{
+	padding: 0;
+	margin: 0;
+	float: right;
+	margin-right: 30px;
+}
+nav ul li{
+	background:  #212121;
+	position: relative;
+	list-style: none;
+	display: inline-block;
+}
+nav ul li a{
+	display: block;
+	padding: 0 15px;
+	color: white;
+	text-decoration: none;
+	line-height: 60px;
+	font-style: 20px;
+}
+nav ul li a:hover{
+	background: #e5e5e5;
+}
+nav ul ul{
+	position: absolute;
+	top: 60px;
+	display: none;
+}
+nav ul li:hover > ul{
+	display: block;
+}
+nav ul ul li{
+	width: 150px;
+	float: none;
+	display: list-item;
+	position: relative;
+}
+nav ul ul ul li{
+	position: relative;
+	top: -60px;
+	Letter-spacing: 150px;
+}
+
+/* Body Temp*/
+.row{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.col-2{
+	flex-basis: 50%;
+	min-width: 300px;
+}
+.col-2 img{
+	max-width: 100%;
+	padding: 50px;
+}
+.col-2 h1{
+	font-size: 50px;
+	line-height: 60px;
+	margin: 25px 0;
+	margin-left: 15px;
+}
+.col-2 p{
+	font-size: 24px;
+	margin-left: 15px;
+}
