@@ -1,0 +1,238 @@
+*{
+	box-sizing: border-box;
+}
+body{	
+	background: #FEB800;
+	font-family: Tokyo;
+	margin: 0;
+	padding: 0;
+}
+
+/* Body Text */
+
+p{
+	color: #fff;
+}
+
+/* Dropdown Menu */
+.dropdown{
+	margin: 0 auto;
+	background: #212121;
+	position: relative;
+}
+nav{
+	height: 60px;
+	background: #212121;
+	box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+.logo{
+	padding: 0px; 0 0 80px;
+	width: 400px;
+	height: 60px;
+}
+nav ul{
+	padding: 0;
+	margin: 0;
+	float: right;
+	margin-right: 30px;
+}
+nav ul li{
+	background:  #212121;
+	position: relative;
+	list-style: none;
+	display: inline-block;
+}
+nav ul li a{
+	display: block;
+	padding: 0 15px;
+	color: white;
+	text-decoration: none;
+	line-height: 60px;
+	font-style: 20px;
+}
+nav ul li a:hover{
+	background: #e5e5e5;
+}
+nav ul ul{
+	position: absolute;
+	top: 60px;
+	display: none;
+}
+nav ul li:hover > ul{
+	display: block;
+}
+nav ul ul li{
+	width: 150px;
+	float: none;
+	display: list-item;
+	position: relative;
+}
+nav ul ul ul li{
+	position: relative;
+	top: -60px;
+	Letter-spacing: 150px;
+}
+
+/* For News Section */
+body
+{
+	margin: 0;
+	padding: 0;
+}
+
+section
+{
+	width: 100%;
+	height: 100vh;
+	background: url(images/template.png);
+	background-size: cover;
+}
+
+section .leftBox
+{
+	width: 50%;
+	height: 100%;
+	float:	left;
+	padding: 50px;
+	box-sizing: border-box;
+}
+
+section .leftBox .content
+{
+	color: #fff;
+	background: rgba(0,0,0,.5);
+	padding: 40px;
+	transition: .5s;
+}
+
+section .leftBox .content:hover
+{
+	background: #0099CC;
+}
+
+section .leftBox .content h1
+{
+	margin: 0;
+	padding: 0;
+	font-size: 50px;
+	text-transform: uppercase;
+	color: #FEB800;
+} 
+
+section .leftBox .content p
+{
+	margin: 10px 0 0;
+	padding: 0;
+	color: #fff;
+}
+
+/* News Section Part 2 */
+section .news
+{
+	position: relative;
+	width: 50%;
+	height: 100%;
+	background: rgba(0,0,0,.5);
+	float: right;
+	box-sizing: border-box;
+}
+
+section .news ul
+{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	margin: 0;
+	padding: 40px;
+	box-sizing: border-box;
+}
+
+section .news ul li
+{
+	list-style: none;
+	background: #fff;
+	box-sizing: border-box;
+	height: 200px;
+	margin: 30px 0; 
+}
+
+section .news ul li .time
+{
+	position: relative;
+	padding: 20px;
+	background: #262626;
+	box-sizing: border-box;
+	width: 30%;
+	height: 100%;
+	float: left;
+	text-align: center;
+	transition: .5s;
+}
+
+section .news ul li:hover .time
+{
+	background: #0099CC;
+}
+
+section .news ul li .time h2
+{
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -60%);
+	color: #fff;
+	font-size: 60px;
+	line-height: 30px;
+}
+
+section .news ul li .time h2 span
+{
+	font-size: 30px;
+}
+
+section .news ul li .details
+{
+	padding: 20px;
+	background: #fff;
+	box-sizing: border-box;
+	width: 70%;
+	height: 100%;
+	float: left;
+}
+
+section .news ul li .details h3
+{
+	position: relative;
+	margin: 0;
+	padding: 0;
+	font-size: 22px;
+	color: #FEB800;
+}
+
+section .news ul li .details p
+{
+	position: relative;
+	margin: 10px 0 0;
+	padding: 0;
+	font-size: 14px;
+	color: #0099CC;
+}
+
+section .news ul li .details a
+{
+	display: inline-block;
+	text-decoration: none;
+	padding: 10px 15px;
+	border: 2px solid #262626;
+	margin-top: 10px;
+	font-size: 18px;
+	transition: .5s;
+}
+section .news ul li .details a:hover
+{
+	background: #0099CC;
+	color:#fff;
+	border-color: #0099CC;
+}
